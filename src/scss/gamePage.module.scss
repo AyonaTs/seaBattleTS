@@ -1,0 +1,19 @@
+.gamePageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.gamePageHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.battlefieldWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
