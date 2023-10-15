@@ -168,7 +168,6 @@ class PreparationScene extends Scene {
 
     startComputer () {
 
-        // TODO: Добавить логику с усложением уровней
         // const matrix = this.game?.player?.matrix;
         // // const withoutShipItems = matrix?.flat().filter((item) => !item.ship) as Matrix;
         // // let untouchables = [] as Matrix[];
