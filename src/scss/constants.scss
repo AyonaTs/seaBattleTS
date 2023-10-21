@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap');
+
+$main-font: 'M PLUS Rounded 1c', sans-serif;
+$padding: 10px;
+
+$background-image: "/background.png";
+
+//margins
+$small: 2px;
+$medium: 5px;
+
+//box-shadow
+$default-shadow: 0 0 5px 2px #969696;
+
+//Текст
+$main-color: rgb(23, 42, 108); //8
+$sub-color: rgba(116, 143, 252, 1); //4
+$sub-color-light: rgba(186, 200, 255, 1); //2
+$dup-color: rgba(76, 110, 245, 1); //6
+$dup-color-hover: rgba(145, 167, 255, 1); //3
+$dup-color-dark: rgba(54, 79, 199, 1);//9
+
+// Корабли
+$border-ship: $dup-color;
+$background-ship: rgba(92, 124, 250, 1);
+$background-ship-hover:$dup-color-dark;
+$background-ship-hit: rgb(91, 50, 154);
+$border-ship-hit: rgb(75, 55, 145);
+
+$border-ship-sunk: rgba(52, 58, 64,1);
+$background-ship-sunk:rgba(33, 37, 41, 1);
+
+// Поля
+$border-board: rgba(206, 212, 218, 1);
+$background-board-empty: rgba(241, 243, 245, 1);
+$background-board-empty-hover: $sub-color-light;
+$cell-background: rgba(241, 243, 245, 1);
+$cell-border: rgba(233, 236, 239, 1);
+
+$miss-background: rgba( 206, 212, 218, 1);
+$miss-border: rgba(233, 236, 239, 1);
+
+$forbidden-background: rgba(255, 201, 201, 1);
+$forbidden-board: rgba( 255, 168, 168, 1);
+
+// Дополнительные цвета
+$red-color: rgba(240, 62, 62, 1);
+$small-cell-border-color: rgb(48, 77, 162);
+$small-cell-background-color: rgb(155, 201, 234)
+

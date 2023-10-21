@@ -1,0 +1,263 @@
+@import "constants";
+
+body {
+  font-family: $main-font;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url($background-image) repeat;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+
+}
+
+section {
+  margin: 2px;
+  text-align: center;
+}
+
+.game-screen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1100px) {
+  .game-screen {
+    flex-direction: column;
+  }
+}
+
+/* Div с кораблями и подсказками  */
+.available-ships,
+.player-tips {
+  width: 200px;
+  text-align: center;
+  align-self: center;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.tip-box-title {
+  color: $main-color;
+}
+.player-tip,
+.statistic {
+  margin-top: 5px;
+  text-transform: none;
+  color: $main-color;
+  font-size: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  color: $main-color;
+  font-size: 38px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.ant-radio-group {
+  display: flex;
+  flex: 1;
+  width: 100%;
+
+  .ant-radio-button-wrapper {
+    flex: 1;
+  }
+}
+
+/* Доска  */
+
+.board {
+  width: 400px;
+  height: 400px;
+  border: 2px solid $border-board;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.board div {
+  width: 10%;
+  height: 10%;
+  box-sizing: border-box;
+  background: $cell-background;
+  border: 1px solid $cell-border;
+  cursor: crosshair;
+  transition: background-color 100ms ease-in-out;
+  &.square:hover {
+    background-color: $dup-color-hover;
+    opacity: 0.9;
+  }
+}
+
+
+/* Пустой */
+.board .empty {
+  background-color: $background-board-empty
+}
+
+.board .empty:hover {
+  background-color: $background-board-empty-hover;
+}
+
+/* Корабль */
+
+.board .ship {
+  background-color: $background-ship;
+  border: 1px solid $border-ship;
+}
+
+.board .ship:hover {
+  background-color:$background-ship-hover;
+}
+
+/* Hit  */
+
+.board .hit {
+  background-color: $background-ship-hit;
+  border: 1px solid $border-ship-hit
+}
+
+/* Miss */
+
+.board .miss {
+  background-color: $miss-background;
+  border: 1px solid $miss-border;
+}
+
+/* Затонувший корабль */
+
+.board .ship-sunk {
+  background-color: $background-ship-sunk;
+  border: 1px solid $border-ship-sunk;
+}
+
+/* Запретная площадь */
+
+.board .forbidden {
+  background-color: $forbidden-background;
+  border: 1px solid $forbidden-board;
+}
+
+.dup,
+.dup-squares {
+  display: flex;
+  flex-direction: row;
+}
+
+.dup {
+  width: 150px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  background-color: $dup-color;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 1px gray;
+}
+
+.dup:hover {
+  background-color: $dup-color-hover;
+  opacity: 0.9;
+}
+
+.dup:active {
+  position: relative;
+  top: 1px;
+}
+
+.placing {
+  background-color: $sub-color-light;
+}
+
+.placing:hover {
+  background-color: $sub-color-light;
+}
+
+.dup-title {
+  font-size: 14px;
+  text-transform: capitalize;
+  font-family: $main-font;
+  color: #fff;
+}
+.dup-fleet-wrapper {
+
+}
+.dup-fleet {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 360px;
+}
+.dup-fleet-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.small-cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $small-cell-border-color;
+  background-color: $small-cell-background-color;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  #dup-ships {
+    max-width: 400px;
+    height: 250px;
+  }
+  .board {
+    margin: 10px;
+  }
+}
+
+.player-title {
+  color: $main-color;
+  text-align: center;
+}
+
+.play-ready {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+

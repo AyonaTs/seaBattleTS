@@ -1,24 +1,34 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import {persistReducer, persistStore} from 'redux-persist';
+import { configureStore } from '@reduxjs/toolkit';
+import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import {gameParamsReducer} from "./reducer/GameSlice.ts";
+
+
+import { rootReducer } from './reducers.ts';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [],
+  whitelist: [
+    'gameParamsReducer',
+    'firstPlayerReducer',
+    'secondPlayerReducer',
+    'computerReducer',
+  ],
 };
-
-const rootReducer = combineReducers({
-  gameParamsReducer
-});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
 });
 
 export const persistor = persistStore(store);
+export default store
 
 export type RootState = ReturnType<typeof rootReducer>;

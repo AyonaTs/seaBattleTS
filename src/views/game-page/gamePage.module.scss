@@ -1,0 +1,17 @@
+@import "src/scss/constants";
+
+.gamePageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  gap: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: $default-shadow;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 10px;
+    margin: 10px auto;
+  }
+}
